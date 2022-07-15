@@ -89,13 +89,14 @@ const controller = {
 		let id = req.params.id;
 		let datos = req.body;
 		let imagen = req.file;
+		let originalImage = products[id-1].image;
 		let datosProductos ={
 			name: datos.name,
 			price: datos.price,
 			discount: datos.discount,
 			category: datos.category,
 			description: datos.description,
-			image: 'default-image.png',
+			image: originalImage,
 		}
 		if (imagen != undefined){
 			datosProductos.image = imagen.filename;
